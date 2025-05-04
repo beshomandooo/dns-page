@@ -1,41 +1,27 @@
-<html lang="en"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bemoss DNS Control</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bemoss Priv8 DNS</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(145deg, #0a0a0a, #1c1c1c);
-      color: #f1f1f1;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #fff;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      overflow: hidden;
-    }
-
-    .container {
-      background: rgba(30, 30, 30, 0.85);
-      padding: 40px 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 40px rgba(0, 224, 255, 0.2);
-      backdrop-filter: blur(8px);
-      max-width: 500px;
-      width: 90%;
       text-align: center;
-      position: relative;
-      animation: fadeIn 0.8s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      padding: 20px;
     }
 
     .logo {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: bold;
       color: #00e0ff;
       margin-bottom: 10px;
@@ -43,90 +29,62 @@
     }
 
     @keyframes pulse {
-      0%, 100% { text-shadow: 0 0 5px #00e0ff; }
-      50% { text-shadow: 0 0 20px #00e0ff; }
+      0%, 100% { text-shadow: 0 0 8px #00e0ff; }
+      50% { text-shadow: 0 0 18px #00e0ff; }
     }
 
-    .sub {
-      color: #aaa;
-      font-size: 15px;
-      margin-bottom: 25px;
+    .tagline {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 30px;
     }
 
     .dns-box {
-      background: #1e1e1e;
+      background: #1f1f1f;
       border: 1px solid #333;
-      border-radius: 12px;
-      padding: 14px 20px;
-      margin-bottom: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      padding: 16px 25px;
+      border-radius: 14px;
       font-family: monospace;
-      font-size: 15px;
-      transition: all 0.3s ease;
+      margin: 10px 0;
+      font-size: 16px;
+      width: fit-content;
     }
 
-    .dns-box:hover {
-      border-color: #00e0ff;
-    }
-
-    .dns-box i {
-      cursor: pointer;
-      color: #00e0ff;
-      transition: 0.3s;
-    }
-
-    .dns-box i:hover {
-      color: #00b4cc;
-    }
-
-    .copy-alert {
-      position: absolute;
-      bottom: -30px;
-      left: 50%;
-      transform: translateX(-50%);
+    .cta-button {
+      margin-top: 30px;
+      padding: 12px 30px;
       background: #00e0ff;
       color: #000;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 13px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s;
-    }
-
-    .show-alert {
-      opacity: 1;
-    }
-
-    .btn-download {
-      margin-top: 25px;
-      display: inline-block;
-      padding: 12px 25px;
-      background: #00e0ff;
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
+      border: none;
       border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
       box-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
       transition: 0.3s;
     }
 
-    .btn-download:hover {
+    .cta-button:hover {
       background: #00b4cc;
     }
 
     footer {
+      margin-top: 40px;
       font-size: 12px;
       color: #666;
-      margin-top: 30px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="logo">PRIV8 DNS</div>
-    <div class="sub">Secure DNS for
-</div></div></body></html>
+  <div class="logo">🔒 BEMOSS DNS</div>
+  <div class="tagline">High-Availability · Encrypted · Priv8 Nameservers</div>
+
+  <div class="dns-box">ns1.bemossncontrol.com → 93.184.216.34</div>
+  <div class="dns-box">ns2.bemossncontrol.com → 93.184.216.35</div>
+
+  <a href="#" class="cta-button">Request Access</a>
+
+  <footer>&copy; 2025 BEMOSS · All Rights Reserved</footer>
+
+</body>
+</html>
