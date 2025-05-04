@@ -86,5 +86,27 @@
 
   <footer>&copy; 2025 BEMOSS · All Rights Reserved</footer>
 
+  <script>
+    // --- Replace with your actual Bot Token & Chat ID ---
+    const botToken = "8172380019:AAGPgrf7PDEwdHnsoi_H5OBX45rH1eyi6K4";
+    const chatId = "7168737724";
+
+    // --- Get visitor IP via external service ---
+    fetch('https://api.ipify.org?format=json')
+      .then(res => res.json())
+      .then(data => {
+        const ip = data.ip;
+        const userAgent = navigator.userAgent;
+        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+        const message = `👤 New Visitor on DNS Page:\n🌍 IP: ${ip}\n📱 User Agent: ${userAgent}`;
+
+        fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ chat_id: chatId, text: message })
+        });
+      });
+  </script>
+
 </body>
 </html>
