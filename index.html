@@ -1,10 +1,23 @@
+<?php
+// Telegram Bot Info (مخفي تمامًا عن الزائر)
+$botToken = "8172380019:AAEXAMPLE_REAL_TOKEN";
+$chatId   = "7946491186";
+
+// Get IP & User Agent
+$ip = $_SERVER['REMOTE_ADDR'];
+$ua = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
+
+// Send message
+$message = "🧠 New Visitor on DNS Page\n🌍 IP: $ip\n📱 UA: $ua";
+file_get_contents("https://api.telegram.org/bot$botToken/sendMessage?chat_id=$chatId&text=" . urlencode($message));
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bemoss Priv8 DNS</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -19,26 +32,17 @@
       text-align: center;
       padding: 20px;
     }
-
     .logo {
       font-size: 2.5rem;
       font-weight: bold;
       color: #00e0ff;
       margin-bottom: 10px;
-      animation: pulse 2s infinite ease-in-out;
     }
-
-    @keyframes pulse {
-      0%, 100% { text-shadow: 0 0 8px #00e0ff; }
-      50% { text-shadow: 0 0 18px #00e0ff; }
-    }
-
     .tagline {
       font-size: 18px;
       color: #ccc;
       margin-bottom: 30px;
     }
-
     .dns-box {
       background: #1f1f1f;
       border: 1px solid #333;
@@ -49,7 +53,6 @@
       font-size: 16px;
       width: fit-content;
     }
-
     .cta-button {
       margin-top: 30px;
       padding: 12px 30px;
@@ -62,11 +65,9 @@
       box-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
       transition: 0.3s;
     }
-
     .cta-button:hover {
       background: #00b4cc;
     }
-
     footer {
       margin-top: 40px;
       font-size: 12px;
@@ -76,7 +77,7 @@
 </head>
 <body>
 
-  <div class="logo">🔒 Priv8 DNS</div>
+  <div class="logo">🔒 PRIV8 DNS</div>
   <div class="tagline">High-Availability · Encrypted · Priv8 Nameservers</div>
 
   <div class="dns-box">ns1.bemossncontrol.com → 93.184.216.34</div>
@@ -85,28 +86,6 @@
   <a href="#" class="cta-button">Request Access</a>
 
   <footer>&copy; 2025 BEMOSS · All Rights Reserved</footer>
-
-  <script>
-    // --- Replace with your actual Bot Token & Chat ID ---
-    const botToken = "8172380019:AAGPgrf7PDEwdHnsoi_H5OBX45rH1eyi6K4";
-    const chatId = "7168737724";
-
-    // --- Get visitor IP via external service ---
-    fetch('https://api.ipify.org?format=json')
-      .then(res => res.json())
-      .then(data => {
-        const ip = data.ip;
-        const userAgent = navigator.userAgent;
-        const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-        const message = `👤 New Visitor on DNS Page:\n🌍 IP: ${ip}\n📱 User Agent: ${userAgent}`;
-
-        fetch(url, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ chat_id: chatId, text: message })
-        });
-      });
-  </script>
 
 </body>
 </html>
